@@ -22,10 +22,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yu-Pn-ISU">
                                         <rect key="frame" x="0.0" y="0.0" width="52" height="30"/>
                                         <state key="normal" title="Log In"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="6DQ-ed-yjz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdn-Kx-kN2">
                                         <rect key="frame" x="0.0" y="50" width="52" height="30"/>
                                         <state key="normal" title="Sign up"/>
+                                        <connections>
+                                            <segue destination="ZZW-qn-JKx" kind="presentation" modalPresentationStyle="fullScreen" id="DBg-sq-9NY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -119,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.75" y="77.112676056338032"/>
+            <point key="canvasLocation" x="19" y="132"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="OSH-sk-dxd">
@@ -170,10 +176,11 @@
                             <constraint firstItem="jSx-8w-Yas" firstAttribute="leading" secondItem="u8w-qg-WXf" secondAttribute="leading" constant="20" id="q4j-LJ-MgQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Wsy-dB-gbB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yV9-oN-hjL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="763" y="77"/>
+            <point key="canvasLocation" x="761" y="131"/>
         </scene>
     </scenes>
     <resources>
