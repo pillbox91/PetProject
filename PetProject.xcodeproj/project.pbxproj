@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32048F7526BB12770001169F /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32048F7426BB12770001169F /* SetupProfileViewController.swift */; };
 		32E367462650ECB400C1623D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E367452650ECB400C1623D /* AppDelegate.swift */; };
 		32E367482650ECB400C1623D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E367472650ECB400C1623D /* SceneDelegate.swift */; };
 		32E3674D2650ECB400C1623D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E3674B2650ECB400C1623D /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32048F7426BB12770001169F /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		32E367422650ECB400C1623D /* PetProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E367452650ECB400C1623D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32E367472650ECB400C1623D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				32E367672650F29900C1623D /* AuthViewController.swift */,
+				32048F7426BB12770001169F /* SetupProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -128,7 +131,6 @@
 				733A0EF5ED808D30667810EA /* Pods-PetProject.debug.xcconfig */,
 				75CC117F406C535698CEBB00 /* Pods-PetProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -246,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32048F7526BB12770001169F /* SetupProfileViewController.swift in Sources */,
 				32E367462650ECB400C1623D /* AppDelegate.swift in Sources */,
 				32E367682650F29900C1623D /* AuthViewController.swift in Sources */,
 				32E367482650ECB400C1623D /* SceneDelegate.swift in Sources */,
