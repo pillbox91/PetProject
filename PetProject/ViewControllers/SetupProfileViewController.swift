@@ -23,6 +23,7 @@ class SetupProfileViewController: UIViewController {
         super.viewDidLoad()
 
         chatButton.layer.cornerRadius = 10
+        photoView.layer.cornerRadius = photoView.bounds.height / 2
     }
     
     @IBAction func goTochatButton(_ sender: Any) {

@@ -15,6 +15,8 @@ class AuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        logInButton.layer.cornerRadius = 10
     }
     
     
