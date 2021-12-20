@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32048F7526BB12770001169F /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32048F7426BB12770001169F /* SetupProfileViewController.swift */; };
+		32B9DA80277093B0007A1CE8 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B9DA7F277093B0007A1CE8 /* IntroductionViewController.swift */; };
 		32E367462650ECB400C1623D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E367452650ECB400C1623D /* AppDelegate.swift */; };
 		32E367482650ECB400C1623D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E367472650ECB400C1623D /* SceneDelegate.swift */; };
 		32E3674D2650ECB400C1623D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E3674B2650ECB400C1623D /* Main.storyboard */; };
 		32E3674F2650ECBA00C1623D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E3674E2650ECBA00C1623D /* Assets.xcassets */; };
 		32E367522650ECBA00C1623D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E367502650ECBA00C1623D /* LaunchScreen.storyboard */; };
-		32E367682650F29900C1623D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E367672650F29900C1623D /* AuthViewController.swift */; };
 		5804425982DBEE7F8CC2C8D1 /* Pods_PetProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3C93E1AE50C5F9B3640D9F /* Pods_PetProject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		32048F7426BB12770001169F /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
+		32B9DA7F277093B0007A1CE8 /* IntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		32E367422650ECB400C1623D /* PetProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E367452650ECB400C1623D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32E367472650ECB400C1623D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,7 +25,6 @@
 		32E3674E2650ECBA00C1623D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32E367512650ECBA00C1623D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32E367532650ECBA00C1623D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32E367672650F29900C1623D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		733A0EF5ED808D30667810EA /* Pods-PetProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetProject.debug.xcconfig"; path = "Target Support Files/Pods-PetProject/Pods-PetProject.debug.xcconfig"; sourceTree = "<group>"; };
 		75CC117F406C535698CEBB00 /* Pods-PetProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetProject.release.xcconfig"; path = "Target Support Files/Pods-PetProject/Pods-PetProject.release.xcconfig"; sourceTree = "<group>"; };
 		EB3C93E1AE50C5F9B3640D9F /* Pods_PetProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,8 +75,7 @@
 		32E3675A2650ECD600C1623D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				32E367672650F29900C1623D /* AuthViewController.swift */,
-				32048F7426BB12770001169F /* SetupProfileViewController.swift */,
+				32B9DA7F277093B0007A1CE8 /* IntroductionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -248,9 +245,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32048F7526BB12770001169F /* SetupProfileViewController.swift in Sources */,
 				32E367462650ECB400C1623D /* AppDelegate.swift in Sources */,
-				32E367682650F29900C1623D /* AuthViewController.swift in Sources */,
+				32B9DA80277093B0007A1CE8 /* IntroductionViewController.swift in Sources */,
 				32E367482650ECB400C1623D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +398,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q56H3JNA98;
 				INFOPLIST_FILE = PetProject/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -422,6 +419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q56H3JNA98;
 				INFOPLIST_FILE = PetProject/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
