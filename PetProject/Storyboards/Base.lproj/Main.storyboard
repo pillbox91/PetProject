@@ -94,6 +94,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Button">
                                             <fontDescription key="titleFontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="25"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="answerButtonPressed:" destination="1nA-Ig-JOx" eventType="touchUpInside" id="s6h-kk-6rh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMN-lK-3UX">
                                         <rect key="frame" x="0.0" y="87" width="343" height="37"/>
@@ -101,6 +104,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Button">
                                             <fontDescription key="titleFontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="25"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="answerButtonPressed:" destination="1nA-Ig-JOx" eventType="touchUpInside" id="X4w-C0-5JS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7I1-bG-NWU">
                                         <rect key="frame" x="0.0" y="174" width="343" height="37"/>
@@ -108,6 +114,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Button">
                                             <fontDescription key="titleFontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="25"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="answerButtonPressed:" destination="1nA-Ig-JOx" eventType="touchUpInside" id="TEP-gV-gIb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdA-ec-2KI">
                                         <rect key="frame" x="0.0" y="261" width="343" height="37"/>
@@ -115,6 +124,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Button">
                                             <fontDescription key="titleFontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="25"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="answerButtonPressed:" destination="1nA-Ig-JOx" eventType="touchUpInside" id="syR-nX-wcm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -143,10 +155,53 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Вопрос №" id="MjN-zt-Lj1"/>
+                    <connections>
+                        <outlet property="questionLabel" destination="6wy-SX-mCr" id="RG5-dK-cve"/>
+                        <outlet property="questionProgressView" destination="r9r-yF-ZD2" id="2Lm-vM-bI0"/>
+                        <outlet property="questionStackView" destination="SpQ-E3-E9S" id="Z4G-On-DUS"/>
+                        <outletCollection property="questionButtons" destination="nuw-Lo-Ms0" collectionClass="NSMutableArray" id="2Bx-tx-VHR"/>
+                        <outletCollection property="questionButtons" destination="wMN-lK-3UX" collectionClass="NSMutableArray" id="Zur-ua-Cjm"/>
+                        <outletCollection property="questionButtons" destination="7I1-bG-NWU" collectionClass="NSMutableArray" id="hgv-EN-Clg"/>
+                        <outletCollection property="questionButtons" destination="hdA-ec-2KI" collectionClass="NSMutableArray" id="i3l-Ji-Bfm"/>
+                        <segue destination="seE-yd-fg7" kind="show" identifier="resultSegue" id="MBC-TY-noj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CY9-bk-HHn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1736" y="-259"/>
+        </scene>
+        <!--Результат-->
+        <scene sceneID="vmg-gG-6NZ">
+            <objects>
+                <viewController id="seE-yd-fg7" customClass="ResultViewController" customModule="PetProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7oV-Nz-zvF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46W-Vn-5Zl">
+                                <rect key="frame" x="153" y="316" width="69" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0n6-kq-GP2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="46W-Vn-5Zl" firstAttribute="centerX" secondItem="7oV-Nz-zvF" secondAttribute="centerX" id="3ns-Ty-IRU"/>
+                            <constraint firstItem="46W-Vn-5Zl" firstAttribute="centerY" secondItem="7oV-Nz-zvF" secondAttribute="centerY" id="jsl-j9-cqO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Результат" id="phz-wd-hIe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="51K-PW-ijw"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="resultLabel" destination="46W-Vn-5Zl" id="a8a-av-8eU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCU-y8-i5P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2535" y="-260"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oyp-6U-SfS">
