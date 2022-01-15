@@ -7,7 +7,10 @@
 
 struct Answer {
     let text: String
-    let rightAnswer: Bool
+    let rightAnswer: RightAnswer
 }
 
-
+enum RightAnswer {
+    case trueAnswer
+    case falseAnswer
+}

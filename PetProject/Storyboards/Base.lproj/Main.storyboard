@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S1s-Dp-PEb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Po7-XL-U4D">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,7 +29,7 @@
                                             <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="1nA-Ig-JOx" kind="show" id="1Sw-Dq-0lL"/>
+                                            <segue destination="uBq-wK-vW1" kind="presentation" modalPresentationStyle="fullScreen" id="fNR-34-jLY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftv-gq-Ur8">
@@ -39,9 +40,6 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <segue destination="S5Z-9P-d6y" kind="show" id="IdT-E7-E2M"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -60,23 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oT9-1O-NVz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="879.375" y="-8.4507042253521121"/>
-        </scene>
-        <!--Вопрос №-->
-        <scene sceneID="ron-GR-6Xj">
-            <objects>
-                <viewController id="S5Z-9P-d6y" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Yrf-q2-wKe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="25f-2G-WYm"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Вопрос №" id="c5G-9G-tjH"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KCe-wH-Q0V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1736.25" y="453.16901408450707"/>
+            <point key="canvasLocation" x="2126" y="-260"/>
         </scene>
         <!--Вопрос №-->
         <scene sceneID="rKT-O9-jJd">
@@ -87,50 +69,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="SpQ-E3-E9S">
-                                <rect key="frame" x="16" y="274.5" width="343" height="298"/>
+                                <rect key="frame" x="16" y="278.5" width="343" height="290"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuw-Lo-Ms0">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="37"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button">
-                                            <fontDescription key="titleFontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="25"/>
-                                        </buttonConfiguration>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="35"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="25"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="answerButtonPressed:" destination="1nA-Ig-JOx" eventType="touchUpInside" id="s6h-kk-6rh"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMN-lK-3UX">
-                                        <rect key="frame" x="0.0" y="87" width="343" height="37"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMN-lK-3UX">
+                                        <rect key="frame" x="0.0" y="85" width="343" height="35"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="25"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button">
-                                            <fontDescription key="titleFontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="25"/>
-                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="answerButtonPressed:" destination="1nA-Ig-JOx" eventType="touchUpInside" id="X4w-C0-5JS"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7I1-bG-NWU">
-                                        <rect key="frame" x="0.0" y="174" width="343" height="37"/>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7I1-bG-NWU">
+                                        <rect key="frame" x="0.0" y="170" width="343" height="35"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="25"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button">
-                                            <fontDescription key="titleFontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="25"/>
-                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="answerButtonPressed:" destination="1nA-Ig-JOx" eventType="touchUpInside" id="TEP-gV-gIb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdA-ec-2KI">
-                                        <rect key="frame" x="0.0" y="261" width="343" height="37"/>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdA-ec-2KI">
+                                        <rect key="frame" x="0.0" y="255" width="343" height="35"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="25"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button">
-                                            <fontDescription key="titleFontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="25"/>
-                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="answerButtonPressed:" destination="1nA-Ig-JOx" eventType="touchUpInside" id="syR-nX-wcm"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wy-SX-mCr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wy-SX-mCr">
                                 <rect key="frame" x="16" y="64" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -168,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CY9-bk-HHn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1736" y="-259"/>
+            <point key="canvasLocation" x="3613.5999999999999" y="-259.52023988005999"/>
         </scene>
         <!--Результат-->
         <scene sceneID="vmg-gG-6NZ">
@@ -193,39 +180,45 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результат" id="phz-wd-hIe">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="51K-PW-ijw"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="51K-PW-ijw">
+                            <connections>
+                                <segue destination="Sum-tw-rg1" kind="unwind" unwindAction="unwindWithSegue:" id="Oaw-bp-mDi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="resultLabel" destination="46W-Vn-5Zl" id="a8a-av-8eU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCU-y8-i5P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Sum-tw-rg1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2535" y="-260"/>
+            <point key="canvasLocation" x="4412" y="-260.41979010494754"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="oyp-6U-SfS">
+        <scene sceneID="NkN-GR-Bdh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S1s-Dp-PEb" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uBq-wK-vW1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lri-JB-TLy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fkz-Vx-iHd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                        </textAttributes>
+                        <navigationBarAppearance key="scrollEdgeAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Po7-XL-U4D" kind="relationship" relationship="rootViewController" id="lNu-DJ-waC"/>
+                        <segue destination="1nA-Ig-JOx" kind="relationship" relationship="rootViewController" id="ffb-Uw-tA6"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u81-sM-gdh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CMk-bx-7Gm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-118.125" y="-8.4507042253521121"/>
+            <point key="canvasLocation" x="2871" y="-260"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

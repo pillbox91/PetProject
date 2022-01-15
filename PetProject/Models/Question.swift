@@ -20,17 +20,17 @@ extension Question {
         return [
             Question(text: "На какой машине я езжу?",
                      answers: [
-                        Answer(text: "VOLVO S60", rightAnswer: true),
-                        Answer(text: "BMW", rightAnswer: false),
-                        Answer(text: "LADA", rightAnswer: false),
-                        Answer(text: "KIA", rightAnswer: false)
+                        Answer(text: "VOLVO S60", rightAnswer: .trueAnswer),
+                        Answer(text: "BMW", rightAnswer: .falseAnswer),
+                        Answer(text: "LADA", rightAnswer: .falseAnswer),
+                        Answer(text: "KIA", rightAnswer: .falseAnswer)
                      ]),
             Question(text: "Какую машину я хочу?",
                      answers: [
-                        Answer(text: "BMW", rightAnswer: true),
-                        Answer(text: "VOLVO XC90", rightAnswer: false),
-                        Answer(text: "KIA", rightAnswer: false),
-                        Answer(text: "LADA", rightAnswer: false)
+                        Answer(text: "BMW", rightAnswer: .falseAnswer),
+                        Answer(text: "VOLVO XC90", rightAnswer: .trueAnswer),
+                        Answer(text: "KIA", rightAnswer: .falseAnswer),
+                        Answer(text: "LADA", rightAnswer: .falseAnswer)
                      ])
         ]
     }

@@ -32,7 +32,21 @@ class QuestionViewController: UIViewController {
     
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        nextQuestion()
+        UIView.animate(withDuration: 2, delay: 0) {
+            switch sender.tag {
+            case 0: self.showRightQuestionAnswer(with: sender)
+            case 1: self.showRightQuestionAnswer(with: self.currentAnswers, with: sender)
+            case 2: self.showRightQuestionAnswer(with: self.currentAnswers, with: sender)
+            case 3: self.showRightQuestionAnswer(with: self.currentAnswers, with: sender)
+            default:
+                break
+            }
+//            self.showRightQuestionAnswer(with: self.currentAnswers)
+        } completion: { done in
+            if done {
+                self.nextQuestion()
+            }
+        }
     }
     
     // MARK: - Navigation
@@ -40,7 +54,7 @@ class QuestionViewController: UIViewController {
     //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     //        let resultVC = segue.destination as! ResultViewController
     //
-    //    }
+    //
     
     
 }
@@ -58,22 +72,34 @@ extension QuestionViewController {
         title = "Вопрос № \(questionIndex + 1) из \(questions.count)"
         
         showQuestinAnswers(with: currentAnswers)
+        print("updateUI")
     }
-  
+    
     private func showQuestinAnswers(with answers: [Answer]) {
         
         for (button, answer) in zip(questionButtons, answers) {
             button.setTitle(answer.text, for: .normal)
+            button.backgroundColor = .systemYellow
+        }
+    }
+    
+    private func showRightQuestionAnswer(answer: Answer, with button: UIButton) {
+            switch answer.rightAnswer {
+            case .trueAnswer:
+                button.backgroundColor = .green
+            case .falseAnswer:
+                button.backgroundColor = .red
         }
     }
     
     private func nextQuestion() {
-        questionIndex += 1
-        
-        if questionIndex < questions.count {
-            updateUI()
+            self.questionIndex += 1
+
+            if self.questionIndex < self.questions.count {
+                self.updateUI()
         } else {
-            performSegue(withIdentifier: "resultSegue", sender: nil)
+            self.performSegue(withIdentifier: "resultSegue", sender: nil)
         }
+        print("nextQuestion")
     }
 }
