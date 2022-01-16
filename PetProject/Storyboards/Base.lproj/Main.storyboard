@@ -75,7 +75,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="35"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="25"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
@@ -165,8 +165,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46W-Vn-5Zl">
-                                <rect key="frame" x="153" y="316" width="69" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46W-Vn-5Zl">
+                                <rect key="frame" x="16" y="316" width="343" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -175,7 +175,8 @@
                         <viewLayoutGuide key="safeArea" id="0n6-kq-GP2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="46W-Vn-5Zl" firstAttribute="centerX" secondItem="7oV-Nz-zvF" secondAttribute="centerX" id="3ns-Ty-IRU"/>
+                            <constraint firstItem="0n6-kq-GP2" firstAttribute="trailing" secondItem="46W-Vn-5Zl" secondAttribute="trailing" constant="16" id="1Zy-02-CZ6"/>
+                            <constraint firstItem="46W-Vn-5Zl" firstAttribute="leading" secondItem="0n6-kq-GP2" secondAttribute="leading" constant="16" id="M9K-Vl-oXi"/>
                             <constraint firstItem="46W-Vn-5Zl" firstAttribute="centerY" secondItem="7oV-Nz-zvF" secondAttribute="centerY" id="jsl-j9-cqO"/>
                         </constraints>
                     </view>

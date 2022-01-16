@@ -34,7 +34,7 @@ class QuestionViewController: UIViewController {
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
         
-        UIView.animate(withDuration: 2, delay: 0) { [self] in
+        UIView.animate(withDuration: 0.5, delay: 0) { [self] in
             
             guard let currentIndex = questionButtons.firstIndex(of: sender) else {return}
             let currentAnswer = currentAnswers[currentIndex]
@@ -48,19 +48,20 @@ class QuestionViewController: UIViewController {
             default:
                 break
             }
+            
         } completion: { done in
             if done {
                 self.nextQuestion()
             }
         }
+//        print(answersChoosen)
     }
     
-    // MARK: - Navigation
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        let resultVC = segue.destination as! ResultViewController
-    //
-    //
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let resultVC = segue.destination as! ResultViewController
+        resultVC.answers = answersChoosen
+    }
     
     
 }
@@ -78,14 +79,16 @@ extension QuestionViewController {
         title = "Вопрос № \(questionIndex + 1) из \(questions.count)"
         
         showQuestinAnswers(with: currentAnswers)
-        print("updateUI")
+//        print("updateUI")
     }
     
     private func showQuestinAnswers(with answers: [Answer]) {
         
         for (button, answer) in zip(questionButtons, answers) {
             button.setTitle(answer.text, for: .normal)
+            button.layer.cornerRadius = 10
             button.backgroundColor = .systemYellow
+            button.tintColor = .black
         }
     }
     

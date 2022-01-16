@@ -11,11 +11,30 @@ class ResultViewController: UIViewController {
 
     @IBOutlet var resultLabel: UILabel!
     
+    var answers: [Answer]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
+        updateResult()
     }
-    
-
-
 }
+
+// MARK: - Private Methods
+extension ResultViewController {
+    
+    private func updateResult() {
+        
+        var rightAnswer = 0
+        let results = answers.map { $0.rightAnswer }
+        
+        for animal in results {
+            if animal == .trueAnswer {
+                rightAnswer += 1
+            }
+        }
+        
+        resultLabel.text = "Правильных ответов: \(rightAnswer)"
+    }
+}
+
