@@ -32,16 +32,22 @@ class QuestionViewController: UIViewController {
     
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        UIView.animate(withDuration: 2, delay: 0) {
+        
+        
+        UIView.animate(withDuration: 2, delay: 0) { [self] in
+            
+            guard let currentIndex = questionButtons.firstIndex(of: sender) else {return}
+            let currentAnswer = currentAnswers[currentIndex]
+            answersChoosen.append(currentAnswer)
+            
             switch sender.tag {
-            case 0: self.showRightQuestionAnswer(with: sender)
-            case 1: self.showRightQuestionAnswer(with: self.currentAnswers, with: sender)
-            case 2: self.showRightQuestionAnswer(with: self.currentAnswers, with: sender)
-            case 3: self.showRightQuestionAnswer(with: self.currentAnswers, with: sender)
+            case 0: self.showRightQuestionAnswer(answer: currentAnswer, with: sender)
+            case 1: self.showRightQuestionAnswer(answer: currentAnswer, with: sender)
+            case 2: self.showRightQuestionAnswer(answer: currentAnswer, with: sender)
+            case 3: self.showRightQuestionAnswer(answer: currentAnswer, with: sender)
             default:
                 break
             }
-//            self.showRightQuestionAnswer(with: self.currentAnswers)
         } completion: { done in
             if done {
                 self.nextQuestion()
@@ -84,18 +90,18 @@ extension QuestionViewController {
     }
     
     private func showRightQuestionAnswer(answer: Answer, with button: UIButton) {
-            switch answer.rightAnswer {
-            case .trueAnswer:
-                button.backgroundColor = .green
-            case .falseAnswer:
-                button.backgroundColor = .red
+        
+        if answer.rightAnswer == .trueAnswer{
+            button.backgroundColor = .green
+        } else if answer.rightAnswer == .falseAnswer {
+            button.backgroundColor = .red
         }
     }
     
     private func nextQuestion() {
-            self.questionIndex += 1
-
-            if self.questionIndex < self.questions.count {
+        self.questionIndex += 1
+        
+        if self.questionIndex < self.questions.count {
                 self.updateUI()
         } else {
             self.performSegue(withIdentifier: "resultSegue", sender: nil)
