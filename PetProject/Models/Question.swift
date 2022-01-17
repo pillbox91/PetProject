@@ -12,6 +12,7 @@ enum WhoseQuestion {
 
 struct Question {
     let text: String
+    let whoseQuestion: WhoseQuestion
     let answers: [Answer]
 }
 
@@ -19,6 +20,7 @@ extension Question {
     static func getQuestion() -> [Question] {
         return [
             Question(text: "На какой машине я езжу?",
+                     whoseQuestion: .Ilnar,
                      answers: [
                         Answer(text: "VOLVO S60", rightAnswer: .trueAnswer),
                         Answer(text: "BMW", rightAnswer: .falseAnswer),
@@ -26,6 +28,7 @@ extension Question {
                         Answer(text: "KIA", rightAnswer: .falseAnswer)
                      ]),
             Question(text: "Какую машину я хочу?",
+                     whoseQuestion: .Astafiev,
                      answers: [
                         Answer(text: "BMW", rightAnswer: .falseAnswer),
                         Answer(text: "VOLVO XC90", rightAnswer: .trueAnswer),
