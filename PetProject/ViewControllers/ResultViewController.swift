@@ -15,7 +15,10 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.isNavigationBarHidden = false
         navigationItem.hidesBackButton = true
+        
         updateResult()
     }
 }

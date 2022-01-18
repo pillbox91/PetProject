@@ -17,16 +17,23 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet var questionProgressView: UIProgressView!
     
+    var whoseQuestion: WhoseQuestion?
+    
     // MARK: - Private Properties
     private let questions = Question.getQuestion()
     private var questionIndex = 0
     private var answersChoosen: [Answer] = []
     private var currentAnswers: [Answer] {
         questions[questionIndex].answers
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.isNavigationBarHidden = false
+        navigationItem.hidesBackButton = true
+        
         updateUI()
     }
     
@@ -70,16 +77,33 @@ class QuestionViewController: UIViewController {
 extension QuestionViewController {
     private func updateUI() {
         
+        if whoseQuestion == .Ilnar {
         let currentQuestion = questions[questionIndex]
-        questionLabel.text = currentQuestion.text
+            questionLabel.text = currentQuestion.text
+            showQuestinAnswers(with: currentAnswers)
+        } else if whoseQuestion == .Astafiev {
+            let currentQuestion = questions[questionIndex]
+            questionLabel.text = currentQuestion.text
+            showQuestinAnswers(with: currentAnswers)
+        }
         
         let totalProgress = Float(questionIndex) / Float(questions.count)
         questionProgressView.setProgress(totalProgress, animated: true)
         
         title = "Вопрос № \(questionIndex + 1) из \(questions.count)"
         
-        showQuestinAnswers(with: currentAnswers)
-//        print("updateUI")
+//        showWhoseCurrentAnswers(for: currentQuestion.whoseQuestion)
+    }
+    
+    private func showWhoseCurrentAnswers(for whoseQuestion: WhoseQuestion) {
+        switch whoseQuestion {
+        case .Ilnar:
+//            showQuestinAnswers(with: currentAnswers)
+            print(whoseQuestion)
+        case .Astafiev:
+//            showQuestinAnswers(with: currentAnswers)
+            print(whoseQuestion)
+        }
     }
     
     private func showQuestinAnswers(with answers: [Answer]) {

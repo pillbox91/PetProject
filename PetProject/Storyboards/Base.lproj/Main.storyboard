@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Po7-XL-U4D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PGQ-tR-AV4">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -29,10 +29,10 @@
                                             <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="uBq-wK-vW1" kind="presentation" modalPresentationStyle="fullScreen" id="fNR-34-jLY"/>
+                                            <segue destination="1nA-Ig-JOx" kind="show" identifier="ilnarSegue" id="Y67-rm-lwM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftv-gq-Ur8">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftv-gq-Ur8">
                                         <rect key="frame" x="0.0" y="119" width="343" height="44"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Астафьева">
@@ -40,6 +40,9 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="1nA-Ig-JOx" kind="show" identifier="showAstafiev" id="Zjb-YK-d6n"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -58,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oT9-1O-NVz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2126" y="-260"/>
+            <point key="canvasLocation" x="4767.1999999999998" y="-260.41979010494754"/>
         </scene>
         <!--Вопрос №-->
         <scene sceneID="rKT-O9-jJd">
@@ -155,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CY9-bk-HHn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3613.5999999999999" y="-259.52023988005999"/>
+            <point key="canvasLocation" x="5492" y="-259.52023988005999"/>
         </scene>
         <!--Результат-->
         <scene sceneID="vmg-gG-6NZ">
@@ -194,28 +197,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nCU-y8-i5P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Sum-tw-rg1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4412" y="-260.41979010494754"/>
+            <point key="canvasLocation" x="6290.3999999999996" y="-260.41979010494754"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="NkN-GR-Bdh">
+        <scene sceneID="2m3-xG-smP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uBq-wK-vW1" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ado-mb-doP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PGQ-tR-AV4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fkz-Vx-iHd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aiP-Ar-sgB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <navigationBarAppearance key="scrollEdgeAppearance"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="1nA-Ig-JOx" kind="relationship" relationship="rootViewController" id="ffb-Uw-tA6"/>
+                        <segue destination="Po7-XL-U4D" kind="relationship" relationship="rootViewController" id="uns-b6-m96"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CMk-bx-7Gm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2871" y="-260"/>
+            <point key="canvasLocation" x="4020" y="-260"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Zjb-YK-d6n"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
