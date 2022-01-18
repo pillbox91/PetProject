@@ -77,28 +77,28 @@ class QuestionViewController: UIViewController {
 extension QuestionViewController {
     private func updateUI() {
         
-        if whoseQuestion == .Ilnar {
+//        if whoseQuestion == .Ilnar {
         let currentQuestion = questions[questionIndex]
             questionLabel.text = currentQuestion.text
             showQuestinAnswers(with: currentAnswers)
-        } else if whoseQuestion == .Astafiev {
-            let currentQuestion = questions[questionIndex]
-            questionLabel.text = currentQuestion.text
-            showQuestinAnswers(with: currentAnswers)
-        }
+//        } else if whoseQuestion == .Astafiev {
+//            let currentQuestion = questions[questionIndex]
+//            questionLabel.text = currentQuestion.text
+//            showQuestinAnswers(with: currentAnswers)
+//        }
         
         let totalProgress = Float(questionIndex) / Float(questions.count)
         questionProgressView.setProgress(totalProgress, animated: true)
         
         title = "Вопрос № \(questionIndex + 1) из \(questions.count)"
         
-//        showWhoseCurrentAnswers(for: currentQuestion.whoseQuestion)
+        showWhoseCurrentAnswers(for: currentQuestion.whoseQuestion)
     }
     
     private func showWhoseCurrentAnswers(for whoseQuestion: WhoseQuestion) {
         switch whoseQuestion {
         case .Ilnar:
-//            showQuestinAnswers(with: currentAnswers)
+            showQuestinAnswers(with: currentAnswers)
             print(whoseQuestion)
         case .Astafiev:
 //            showQuestinAnswers(with: currentAnswers)

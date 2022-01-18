@@ -13,7 +13,6 @@ enum WhoseQuestion {
 struct Question {
     let whoseQuestion: WhoseQuestion
     let text: String
-    let whoseQuestion: WhoseQuestion
     let answers: [Answer]
     
 }

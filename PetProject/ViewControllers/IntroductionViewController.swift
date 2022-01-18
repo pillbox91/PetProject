@@ -9,6 +9,8 @@ import UIKit
 
 class IntroductionViewController: UIViewController {
     
+    var question: [QuestionIlnar] = []
+    
     let ilnarQuestion = WhoseQuestion.Ilnar
     let astafievQuestion = WhoseQuestion.Astafiev
     

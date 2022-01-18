@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321920972797183700BF4EC2 /* PetProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 321920952797183700BF4EC2 /* PetProject.xcdatamodeld */; };
 		3228BE392791EB9C00A0CC7B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228BE382791EB9C00A0CC7B /* Question.swift */; };
 		3228BE3B2791EBAD00A0CC7B /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228BE3A2791EBAD00A0CC7B /* Answer.swift */; };
 		3228BE3D2791F1DE00A0CC7B /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228BE3C2791F1DE00A0CC7B /* ResultViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		321920962797183700BF4EC2 /* PetProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetProject.xcdatamodel; sourceTree = "<group>"; };
 		3228BE382791EB9C00A0CC7B /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3228BE3A2791EBAD00A0CC7B /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		3228BE3C2791F1DE00A0CC7B /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				32E367532650ECBA00C1623D /* Info.plist */,
 				32E367452650ECB400C1623D /* AppDelegate.swift */,
 				32E367472650ECB400C1623D /* SceneDelegate.swift */,
+				321920952797183700BF4EC2 /* PetProject.xcdatamodeld */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				3228BE3B2791EBAD00A0CC7B /* Answer.swift in Sources */,
 				32CBF1AA278C48AA00187D4B /* QuestionViewController.swift in Sources */,
 				32E367482650ECB400C1623D /* SceneDelegate.swift in Sources */,
+				321920972797183700BF4EC2 /* PetProject.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +473,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		321920952797183700BF4EC2 /* PetProject.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				321920962797183700BF4EC2 /* PetProject.xcdatamodel */,
+			);
+			currentVersion = 321920962797183700BF4EC2 /* PetProject.xcdatamodel */;
+			path = PetProject.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 32E3673A2650ECB400C1623D /* Project object */;
 }
