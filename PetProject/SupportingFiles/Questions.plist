@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>question</key>
+		<string>DDDDDDD</string>
+		<key>questionOne</key>
+		<dict>
+			<key>question</key>
+			<string>Какую хочу?</string>
+			<key>answers</key>
+			<array>
+				<dict>
+					<key>answer</key>
+					<string>Bmw</string>
+					<key>rightAnswer</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>answer</key>
+					<string>Kia</string>
+					<key>rightAnswer</key>
+					<false/>
+				</dict>
+				<dict>
+					<key>answer</key>
+					<string>Volvo xc90</string>
+					<key>rightAnswer</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>answer</key>
+					<string>Hyundai</string>
+					<key>rightAnswer</key>
+					<false/>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+</array>
+</plist>

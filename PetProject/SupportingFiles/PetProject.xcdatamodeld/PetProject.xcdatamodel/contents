@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="QuestionIlnar" representedClassName="QuestionIlnar" syncable="YES" codeGenerationType="class">
+        <attribute name="answer" optional="YES" attributeType="String"/>
         <attribute name="question" optional="YES" attributeType="String"/>
+        <attribute name="rightAnswer" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="QuestionIlnar" positionX="-54" positionY="-9" width="128" height="44"/>
+        <element name="QuestionIlnar" positionX="-54" positionY="-9" width="128" height="74"/>
     </elements>
 </model>

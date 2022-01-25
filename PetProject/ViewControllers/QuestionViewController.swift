@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class QuestionViewController: UIViewController {
+    
+    var context: NSManagedObjectContext!
     
     //MARK: - IB Outlets
     @IBOutlet var questionLabel: UILabel!
@@ -17,16 +20,16 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet var questionProgressView: UIProgressView!
     
-    var whoseQuestion: WhoseQuestion?
+//    var whoseQuestion: WhoseQuestion?
     
     // MARK: - Private Properties
-    private let questions = Question.getQuestion()
-    private var questionIndex = 0
-    private var answersChoosen: [Answer] = []
-    private var currentAnswers: [Answer] {
-        questions[questionIndex].answers
-        
-    }
+//    private let questions = Question.getQuestion()
+//    private var questionIndex = 0
+//    private var answersChoosen: [Answer] = []
+//    private var currentAnswers: [Answer] {
+//        questions[questionIndex].answers
+//
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +37,20 @@ class QuestionViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         navigationItem.hidesBackButton = true
         
-        updateUI()
+//        updateUI()
+        getDataFromFile()
+        
+        let fetchRequest: NSFetchRequest<QuestionIlnar> = QuestionIlnar.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "question == %@")
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            let question = results.first
+            insertDataFrom(selectedQuestion: question!)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
     }
     
     
@@ -43,18 +59,18 @@ class QuestionViewController: UIViewController {
         
         UIView.animate(withDuration: 0.5, delay: 0) { [self] in
             
-            guard let currentIndex = questionButtons.firstIndex(of: sender) else {return}
-            let currentAnswer = currentAnswers[currentIndex]
-            answersChoosen.append(currentAnswer)
-            
-            switch sender.tag {
-            case 0: self.showRightQuestionAnswer(answer: currentAnswer, with: sender)
-            case 1: self.showRightQuestionAnswer(answer: currentAnswer, with: sender)
-            case 2: self.showRightQuestionAnswer(answer: currentAnswer, with: sender)
-            case 3: self.showRightQuestionAnswer(answer: currentAnswer, with: sender)
-            default:
-                break
-            }
+//            guard let currentIndex = questionButtons.firstIndex(of: sender) else {return}
+//            let currentAnswer = currentAnswers[currentIndex]
+//            answersChoosen.append(currentAnswer)
+//
+//            switch sender.tag {
+//            case 0: self.showRightQuestionAnswer(answer: currentAnswer, with: sender)
+//            case 1: self.showRightQuestionAnswer(answer: currentAnswer, with: sender)
+//            case 2: self.showRightQuestionAnswer(answer: currentAnswer, with: sender)
+//            case 3: self.showRightQuestionAnswer(answer: currentAnswer, with: sender)
+//            default:
+//                break
+//            }
             
         } completion: { done in
             if done {
@@ -67,7 +83,7 @@ class QuestionViewController: UIViewController {
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let resultVC = segue.destination as! ResultViewController
-        resultVC.answers = answersChoosen
+//        resultVC.answers = answersChoosen
     }
     
     
@@ -78,33 +94,33 @@ extension QuestionViewController {
     private func updateUI() {
         
 //        if whoseQuestion == .Ilnar {
-        let currentQuestion = questions[questionIndex]
-            questionLabel.text = currentQuestion.text
-            showQuestinAnswers(with: currentAnswers)
+//        let currentQuestion = questions[questionIndex]
+//            questionLabel.text = currentQuestion.text
+//            showQuestinAnswers(with: currentAnswers)
 //        } else if whoseQuestion == .Astafiev {
 //            let currentQuestion = questions[questionIndex]
 //            questionLabel.text = currentQuestion.text
 //            showQuestinAnswers(with: currentAnswers)
 //        }
         
-        let totalProgress = Float(questionIndex) / Float(questions.count)
-        questionProgressView.setProgress(totalProgress, animated: true)
+//        let totalProgress = Float(questionIndex) / Float(questions.count)
+//        questionProgressView.setProgress(totalProgress, animated: true)
+//
+//        title = "Вопрос № \(questionIndex + 1) из \(questions.count)"
         
-        title = "Вопрос № \(questionIndex + 1) из \(questions.count)"
-        
-        showWhoseCurrentAnswers(for: currentQuestion.whoseQuestion)
+//        showWhoseCurrentAnswers(for: currentQuestion.whoseQuestion)
     }
     
-    private func showWhoseCurrentAnswers(for whoseQuestion: WhoseQuestion) {
-        switch whoseQuestion {
-        case .Ilnar:
-            showQuestinAnswers(with: currentAnswers)
-            print(whoseQuestion)
-        case .Astafiev:
-//            showQuestinAnswers(with: currentAnswers)
-            print(whoseQuestion)
-        }
-    }
+//    private func showWhoseCurrentAnswers(for whoseQuestion: WhoseQuestion) {
+//        switch whoseQuestion {
+//        case .Ilnar:
+////            showQuestinAnswers(with: currentAnswers)
+//            print(whoseQuestion)
+//        case .Astafiev:
+////            showQuestinAnswers(with: currentAnswers)
+//            print(whoseQuestion)
+//        }
+//    }
     
     private func showQuestinAnswers(with answers: [Answer]) {
         
@@ -126,13 +142,32 @@ extension QuestionViewController {
     }
     
     private func nextQuestion() {
-        self.questionIndex += 1
+        //        self.questionIndex += 1
         
-        if self.questionIndex < self.questions.count {
-                self.updateUI()
-        } else {
-            self.performSegue(withIdentifier: "resultSegue", sender: nil)
-        }
+        //        if self.questionIndex < self.questions.count {
+        //                self.updateUI()
+        //        } else {
+        self.performSegue(withIdentifier: "resultSegue", sender: nil)
+        //        }
         print("nextQuestion")
+    }
+    
+    private func getDataFromFile() {
+        guard let pathToFile = Bundle.main.path(forResource: "Questions", ofType: "plist"),
+              let dataArray = NSArray(contentsOfFile: pathToFile) else {return}
+        
+        for dictionary in dataArray {
+            let entity = NSEntityDescription.entity(forEntityName: "QuestionIlnar", in: context)
+            let questions = NSManagedObject(entity: entity!, insertInto: context) as! QuestionIlnar
+            
+            let questionsDictionary = dictionary as! [String : AnyObject]
+            questions.question = questionsDictionary["question"] as? String
+            
+            
+        }
+    }
+    
+    private func insertDataFrom(selectedQuestion question: QuestionIlnar) {
+        questionLabel.text = question.question
     }
 }
