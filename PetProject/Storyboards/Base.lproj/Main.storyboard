@@ -29,7 +29,8 @@
                                             <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="O5Y-Nm-qse" kind="presentation" identifier="ilnarSegue" modalPresentationStyle="fullScreen" id="Y67-rm-lwM"/>
+                                            <action selector="ilnarButton:" destination="Po7-XL-U4D" eventType="touchUpInside" id="iDI-BG-t8W"/>
+                                            <segue destination="O5Y-Nm-qse" kind="presentation" identifier="IlnarSegue" modalPresentationStyle="fullScreen" id="Y67-rm-lwM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftv-gq-Ur8">

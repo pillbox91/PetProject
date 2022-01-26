@@ -11,10 +11,10 @@ import CoreData
 class IntroductionViewController: UIViewController {
     
     var context: NSManagedObjectContext!
-    var question: [QuestionIlnar] = []
-    
-    let ilnarQuestion = WhoseQuestion.Ilnar
-    let astafievQuestion = WhoseQuestion.Astafiev
+//    var question: [QuestionIlnar] = []
+//
+//    let ilnarQuestion = WhoseQuestion.Ilnar
+//    let astafievQuestion = WhoseQuestion.Astafiev
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +23,18 @@ class IntroductionViewController: UIViewController {
     
     @IBAction func unwind(segue: UIStoryboardSegue) {}
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard segue.identifier == "ilnarSegue" else { return }
-//        guard let destination = segue.destination as? QuestionViewController else { return }
-////        destination.whoseQuestion = ilnarQuestion
-//        print("1 \(destination)")
-//
-//        guard segue.identifier == "showAstafiev" else { return }
-//        guard let destination = segue.destination as? QuestionViewController else { return }
-//        destination.whoseQuestion = ilnarQuestion
-//        print(destination)
-//    }
+    @IBAction func ilnarButton(_ sender: Any) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "IlnarSegue" {
+            if let destVC = segue.destination as? UINavigationController,
+               let targetController = destVC.topViewController as? QuestionViewController {
+                targetController.context = context
+            }
+        }
+    }
     
     
 }

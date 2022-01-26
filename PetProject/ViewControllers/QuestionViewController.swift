@@ -153,6 +153,9 @@ extension QuestionViewController {
     }
     
     private func getDataFromFile() {
+        let fetchRequest: NSFetchRequest<QuestionIlnar> = QuestionIlnar.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "mark != nil")
+        
         guard let pathToFile = Bundle.main.path(forResource: "Questions", ofType: "plist"),
               let dataArray = NSArray(contentsOfFile: pathToFile) else {return}
         
