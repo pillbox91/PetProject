@@ -41,7 +41,7 @@ class QuestionViewController: UIViewController {
         getDataFromFile()
         
         let fetchRequest: NSFetchRequest<QuestionIlnar> = QuestionIlnar.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "question == %@")
+       
         
         do {
             let results = try context.fetch(fetchRequest)
@@ -154,7 +154,18 @@ extension QuestionViewController {
     
     private func getDataFromFile() {
         let fetchRequest: NSFetchRequest<QuestionIlnar> = QuestionIlnar.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "mark != nil")
+        fetchRequest.predicate = NSPredicate(format: "question != nil")
+        
+        var records = 0
+        
+        do {
+            records = try context.count(for: fetchRequest)
+            print("Is Data there already?")
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+        guard records == 0 else { return }
         
         guard let pathToFile = Bundle.main.path(forResource: "Questions", ofType: "plist"),
               let dataArray = NSArray(contentsOfFile: pathToFile) else {return}

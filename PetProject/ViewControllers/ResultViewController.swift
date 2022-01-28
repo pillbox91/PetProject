@@ -19,7 +19,7 @@ class ResultViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         navigationItem.hidesBackButton = true
         
-        updateResult()
+//        updateResult()
     }
 }
 
