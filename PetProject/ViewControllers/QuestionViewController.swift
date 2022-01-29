@@ -174,14 +174,21 @@ extension QuestionViewController {
             let entity = NSEntityDescription.entity(forEntityName: "QuestionIlnar", in: context)
             let questions = NSManagedObject(entity: entity!, insertInto: context) as! QuestionIlnar
             
-            let questionsDictionary = dictionary as! [String : AnyObject]
-            questions.question = questionsDictionary["question"] as? String
+            let questionsDictionary = dictionary as! NSDictionary
+            let questionOneDictionary = questionsDictionary["questionOne"] as! NSDictionary
+            questions.question = questionOneDictionary["question"] as? String
             
+//            let answersDictionary = questionsDictionary["questionOne"] as! NSArray
+//            let answerDictionary = answersDictionary as! NSDictionary
+//            questions.answer = answerDictionary["answer"] as? String
+//            
             
         }
     }
     
     private func insertDataFrom(selectedQuestion question: QuestionIlnar) {
         questionLabel.text = question.question
+        
+        
     }
 }
