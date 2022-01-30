@@ -122,15 +122,15 @@ extension QuestionViewController {
 //        }
 //    }
     
-    private func showQuestinAnswers(with answers: [Answer]) {
-        
-        for (button, answer) in zip(questionButtons, answers) {
-            button.setTitle(answer.text, for: .normal)
-            button.layer.cornerRadius = 10
-            button.backgroundColor = .systemYellow
-            button.tintColor = .black
-        }
-    }
+//    private func showQuestinAnswers(with answers: [QuestionIlnar]) {
+//
+//        for (button, answer) in zip(questionButtons, answers) {
+//            button.setTitle(answer.answer, for: .normal)
+//            button.layer.cornerRadius = 10
+//            button.backgroundColor = .systemYellow
+//            button.tintColor = .black
+//        }
+//    }
     
     private func showRightQuestionAnswer(answer: Answer, with button: UIButton) {
         
@@ -178,10 +178,15 @@ extension QuestionViewController {
             let questionOneDictionary = questionsDictionary["questionOne"] as! NSDictionary
             questions.question = questionOneDictionary["question"] as? String
             
-//            let answersDictionary = questionsDictionary["questionOne"] as! NSArray
-//            let answerDictionary = answersDictionary as! NSDictionary
-//            questions.answer = answerDictionary["answer"] as? String
-//            
+            let answersDictionary = questionsDictionary["questionOne"] as! NSDictionary
+            let answerDictionary = answersDictionary["answers"] as! NSArray
+            
+            for answers in answerDictionary {
+                let answer = answers as! NSDictionary
+                questions.answer = answer["answer"] as? String
+                print(questions.answer)
+            }
+            print(questions.answer)
             
         }
     }
