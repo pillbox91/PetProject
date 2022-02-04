@@ -26,8 +26,10 @@ class QuestionViewController: UIViewController {
 //    private let questions = Question.getQuestion()
 //    private var questionIndex = 0
 //    private var answersChoosen: [Answer] = []
-//    private var currentAnswers: [Answer] {
+//    private var currentAnswers: [QuestionIlnar] {
 //        questions[questionIndex].answers
+//        let fetchRequest: NSFetchRequest<QuestionIlnar> = QuestionIlnar.fetchRequest()
+//
 //
 //    }
     
