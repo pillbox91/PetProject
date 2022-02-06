@@ -20,16 +20,18 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet var questionProgressView: UIProgressView!
     
+//    var whoseQuestion: WhoseQuestion?
+    
     // MARK: - Private Properties
-    private let questions = Question.getQuestion()
-    private var questionIndex = 0
-    private var answersChoosen: [Answer] = []
-    private var currentAnswers: [QuestionIlnar] {
-        questions[questionIndex].answers
-        let fetchRequest: NSFetchRequest<QuestionIlnar> = QuestionIlnar.fetchRequest()
-
-
-    }
+//    private let questions = Question.getQuestion()
+//    private var questionIndex = 0
+//    private var answersChoosen: [Answer] = []
+//    private var currentAnswers: [QuestionIlnar] {
+//        questions[questionIndex].answers
+//        let fetchRequest: NSFetchRequest<QuestionIlnar> = QuestionIlnar.fetchRequest()
+//
+//
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +79,6 @@ class QuestionViewController: UIViewController {
                 self.nextQuestion()
             }
         }
-//        print(answersChoosen)
     }
     
     //MARK: - Navigation
@@ -184,9 +185,9 @@ extension QuestionViewController {
             for answers in answerDictionary {
                 let answer = answers as! NSDictionary
                 questions.answer = answer["answer"] as? String
-                print(questions.answer)
+//                print(questions.answer)
             }
-            print(questions.answer)
+//            print(questions.answer)
             
         }
     }
