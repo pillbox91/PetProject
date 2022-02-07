@@ -4,11 +4,31 @@
 //
 //  Created by Андрей Аверьянов on 14.01.2022.
 //
+import Foundation
 
-enum WhoseQuestion {
-    case Ilnar
-    case Astafiev
+class Question: NSObject, NSCoding {
+    
+    var question: String
+    
+    init(question: String) {
+        self.question = question
+    }
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(question, forKey: "question")
+    }
+    
+    required init?(coder: NSCoder) {
+        question = coder.decodeObject(forKey: "question") as? String ?? ""
+    }
 }
+
+
+
+//enum WhoseQuestion {
+//    case Ilnar
+//    case Astafiev
+//}
 
 //struct Question {
 //    let whoseQuestion: WhoseQuestion

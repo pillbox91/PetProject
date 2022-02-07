@@ -39,19 +39,21 @@ class QuestionViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         navigationItem.hidesBackButton = true
         
+        questionLabel.text = QuestionDefaults.questionModel.question
+        
 //        updateUI()
-        getDataFromFile()
+//        getDataFromFile()
         
-        let fetchRequest: NSFetchRequest<QuestionIlnar> = QuestionIlnar.fetchRequest()
-       
-        
-        do {
-            let results = try context.fetch(fetchRequest)
-            let question = results.first
-            insertDataFrom(selectedQuestion: question!)
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
+//        let fetchRequest: NSFetchRequest<QuestionIlnar> = QuestionIlnar.fetchRequest()
+//
+//
+//        do {
+//            let results = try context.fetch(fetchRequest)
+//            let question = results.first
+//            insertDataFrom(selectedQuestion: question!)
+//        } catch let error as NSError {
+//            print(error.localizedDescription)
+//        }
         
     }
     
@@ -154,19 +156,19 @@ extension QuestionViewController {
     }
     
     private func getDataFromFile() {
-        let fetchRequest: NSFetchRequest<QuestionIlnar> = QuestionIlnar.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "question != nil")
-        
-        var records = 0
-        
-        do {
-            records = try context.count(for: fetchRequest)
-            print("Is Data there already?")
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-        
-        guard records == 0 else { return }
+//        let fetchRequest: NSFetchRequest<QuestionIlnar> = QuestionIlnar.fetchRequest()
+//        fetchRequest.predicate = NSPredicate(format: "question != nil")
+//
+//        var records = 0
+//
+//        do {
+//            records = try context.count(for: fetchRequest)
+//            print("Is Data there already?")
+//        } catch let error as NSError {
+//            print(error.localizedDescription)
+//        }
+//
+//        guard records == 0 else { return }
         
         guard let pathToFile = Bundle.main.path(forResource: "Questions", ofType: "plist"),
               let dataArray = NSArray(contentsOfFile: pathToFile) else {return}
@@ -185,11 +187,12 @@ extension QuestionViewController {
             for answers in answerDictionary {
                 let answer = answers as! NSDictionary
                 questions.answer = answer["answer"] as? String
-//                print(questions.answer)
+                print(questions.answer)
             }
-//            print(questions.answer)
-            
+            print(questions.question)
+            QuestionDefaults.questionModel.question = questions.question ?? ""
         }
+        
     }
     
     private func insertDataFrom(selectedQuestion question: QuestionIlnar) {
