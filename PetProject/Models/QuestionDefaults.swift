@@ -13,7 +13,7 @@ class QuestionDefaults {
         case questionModel
     }
     
-    static var questionModel: Question! {
+    static var questionModel: Question? {
         get {
             guard let savedData = UserDefaults.standard.object(forKey: SettingKey.questionModel.rawValue) as? Data,
                   let decodedModel = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedData) as? Question else { return nil }

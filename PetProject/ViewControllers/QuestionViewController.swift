@@ -11,6 +11,7 @@ import CoreData
 class QuestionViewController: UIViewController {
     
     var context: NSManagedObjectContext!
+    let defaults = UserDefaults.standard
     
     //MARK: - IB Outlets
     @IBOutlet var questionLabel: UILabel!
@@ -38,11 +39,23 @@ class QuestionViewController: UIViewController {
         
         self.navigationController?.isNavigationBarHidden = false
         navigationItem.hidesBackButton = true
+//        getDataFromFile()
+//        questionLabel.text = QuestionDefaults.questionModel.question
         
-        questionLabel.text = QuestionDefaults.questionModel.question
+        if defaults.bool(forKey: "First Launch") == true {
+            getDataFromFile()
+            questionLabel.text = QuestionDefaults.questionModel?.question
+            defaults.set(true, forKey: "First Launch")
+            print("Second")
+        } else {
+            getDataFromFile()
+            questionLabel.text = QuestionDefaults.questionModel?.question
+            defaults.set(true, forKey: "First Launch")
+            print("First")
+        }
         
 //        updateUI()
-//        getDataFromFile()
+        
         
 //        let fetchRequest: NSFetchRequest<QuestionIlnar> = QuestionIlnar.fetchRequest()
 //
@@ -190,7 +203,7 @@ extension QuestionViewController {
                 print(questions.answer)
             }
             print(questions.question)
-            QuestionDefaults.questionModel.question = questions.question ?? ""
+            QuestionDefaults.questionModel?.question = questions.question ?? ""
         }
         
     }
