@@ -9,29 +9,34 @@ import Foundation
 
 class QuestionDefaults {
     
-    private enum SettingKey: String {
-        case questionModel
+    let defaults = UserDefaults.standard
+    
+    static let shared = QuestionDefaults()
+
+    struct QuestionData: Codable {
+        var question: String?
+        var answer: String?
     }
     
-    static var questionModel: Question? {
+    var questions: [QuestionData] {
         get {
-            guard let savedData = UserDefaults.standard.object(forKey: SettingKey.questionModel.rawValue) as? Data,
-                  let decodedModel = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedData) as? Question else { return nil }
-            return decodedModel
-        }
-        set {
-            let defaults = UserDefaults.standard
-            let key = SettingKey.questionModel.rawValue
-            
-            if let questionModel = newValue {
-                if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: questionModel, requiringSecureCoding: false) {
-                    print("value: \(questionModel) was added to key \(key)")
-                    defaults.set(savedData, forKey: key)
-                } else {
-                    defaults.removeObject(forKey: key)
-                }
+            if let data = defaults.value(forKey: "questions") as? Data {
+                return try! PropertyListDecoder().decode([QuestionData].self, from: data)
+            } else {
+                return [QuestionData]()
             }
         }
+        
+        set {
+            if let data = try? PropertyListEncoder().encode(newValue){
+                defaults.set(data, forKey: "questions")
+            }
+        }
+    }
+    
+    func saveQuestion(question: String?, answer: String?) {
+        let question = QuestionData(question: question, answer: answer)
+        questions.append(question)
     }
 }
 

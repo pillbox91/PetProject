@@ -5,23 +5,23 @@
 //  Created by Андрей Аверьянов on 14.01.2022.
 //
 import Foundation
-
-class Question: NSObject, NSCoding {
-    
-    var question: String
-    
-    init(question: String) {
-        self.question = question
-    }
-    
-    func encode(with coder: NSCoder) {
-        coder.encode(question, forKey: "question")
-    }
-    
-    required init?(coder: NSCoder) {
-        question = coder.decodeObject(forKey: "question") as? String ?? ""
-    }
-}
+//
+//class Question: NSObject, NSCoding {
+//    
+//    var question: String
+//    
+//    init(question: String) {
+//        self.question = question
+//    }
+//    
+//    func encode(with coder: NSCoder) {
+//        coder.encode(question, forKey: "question")
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        question = coder.decodeObject(forKey: "question") as? String ?? ""
+//    }
+//}
 
 
 

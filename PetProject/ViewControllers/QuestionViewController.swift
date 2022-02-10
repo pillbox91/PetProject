@@ -44,12 +44,12 @@ class QuestionViewController: UIViewController {
         
         if defaults.bool(forKey: "First Launch") == true {
             getDataFromFile()
-            questionLabel.text = QuestionDefaults.questionModel?.question
+            questionLabel.text = QuestionDefaults.shared.questions.first?.question
             defaults.set(true, forKey: "First Launch")
             print("Second")
         } else {
             getDataFromFile()
-            questionLabel.text = QuestionDefaults.questionModel?.question
+            questionLabel.text = QuestionDefaults.shared.questions.first?.question
             defaults.set(true, forKey: "First Launch")
             print("First")
         }
@@ -200,10 +200,13 @@ extension QuestionViewController {
             for answers in answerDictionary {
                 let answer = answers as! NSDictionary
                 questions.answer = answer["answer"] as? String
+                //                print(questions.answer)
+                QuestionDefaults.shared.saveQuestion(question: questions.question, answer: questions.answer)
+                print(questions.question)
                 print(questions.answer)
             }
-            print(questions.question)
-            QuestionDefaults.questionModel?.question = questions.question ?? ""
+            
+            //            QuestionDefaults.shared.saveQuestion(question: questions.question, answer: questions.answer)
         }
         
     }
