@@ -24,14 +24,11 @@ class QuestionViewController: UIViewController {
 //    var whoseQuestion: WhoseQuestion?
     
     // MARK: - Private Properties
-//    private let questions = Question.getQuestion()
+//    private let questions = QuestionDefaults.QuestionData()
 //    private var questionIndex = 0
 //    private var answersChoosen: [Answer] = []
-//    private var currentAnswers: [QuestionIlnar] {
-//        questions[questionIndex].answers
-//        let fetchRequest: NSFetchRequest<QuestionIlnar> = QuestionIlnar.fetchRequest()
-//
-//
+//    private var currentAnswers: [QuestionDefaults] {
+//        questions.answers!
 //    }
     
     override func viewDidLoad() {
@@ -43,13 +40,15 @@ class QuestionViewController: UIViewController {
 //        questionLabel.text = QuestionDefaults.questionModel.question
         
         if defaults.bool(forKey: "First Launch") == true {
-            getDataFromFile()
-            questionLabel.text = QuestionDefaults.shared.questions.first?.question
+//            getDataFromFile()
+            questionLabel.text = QuestionDefaults.shared.dataStorage.question
+            showQuestinAnswers(with: QuestionDefaults.shared.dataStorage.answers!)
             defaults.set(true, forKey: "First Launch")
             print("Second")
         } else {
             getDataFromFile()
-            questionLabel.text = QuestionDefaults.shared.questions.first?.question
+            questionLabel.text = QuestionDefaults.shared.dataStorage.question
+            showQuestinAnswers(with: QuestionDefaults.shared.dataStorage.answers!)
             defaults.set(true, forKey: "First Launch")
             print("First")
         }
@@ -138,15 +137,16 @@ extension QuestionViewController {
 //        }
 //    }
     
-//    private func showQuestinAnswers(with answers: [QuestionIlnar]) {
-//
-//        for (button, answer) in zip(questionButtons, answers) {
-//            button.setTitle(answer.answer, for: .normal)
-//            button.layer.cornerRadius = 10
-//            button.backgroundColor = .systemYellow
-//            button.tintColor = .black
-//        }
-//    }
+    private func showQuestinAnswers(with answers: [QuestionDefaults.Answer]) {
+
+        for (button, answer) in zip(questionButtons, answers) {
+            button.setTitle(answer.text, for: .normal)
+            button.layer.cornerRadius = 10
+            button.backgroundColor = .systemYellow
+            button.tintColor = .black
+            print(answer)
+        }
+    }
     
     private func showRightQuestionAnswer(answer: Answer, with button: UIButton) {
         
@@ -200,20 +200,25 @@ extension QuestionViewController {
             for answers in answerDictionary {
                 let answer = answers as! NSDictionary
                 questions.answer = answer["answer"] as? String
-                //                print(questions.answer)
-                QuestionDefaults.shared.saveQuestion(question: questions.question, answer: questions.answer)
-                print(questions.question)
-                print(questions.answer)
+                QuestionDefaults.shared.storageAnswer.text = questions.answer
+//                QuestionDefaults.shared.saveAnswer(answer: questions.answer ?? "")
+                
+//                print(questions.answer)
+                print(QuestionDefaults.shared.storageAnswer.text)
             }
             
+            QuestionDefaults.shared.saveQuestion(question: questions.question)
+            
+            
+            print(questions.question)
             //            QuestionDefaults.shared.saveQuestion(question: questions.question, answer: questions.answer)
         }
         
     }
     
-    private func insertDataFrom(selectedQuestion question: QuestionIlnar) {
-        questionLabel.text = question.question
-        
-        
-    }
+//    private func insertDataFrom(selectedQuestion question: QuestionDefaults) {
+//        questionLabel.text = QuestionDefaults.shared.questions.first?.question
+//        showQuestinAnswers(with: QuestionDefaults.shared.questions)
+//    
+//    }
 }
