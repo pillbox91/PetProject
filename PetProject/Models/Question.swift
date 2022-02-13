@@ -4,7 +4,7 @@
 //
 //  Created by Андрей Аверьянов on 14.01.2022.
 //
-import Foundation
+//import Foundation
 //
 //class Question: NSObject, NSCoding {
 //    
