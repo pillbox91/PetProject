@@ -25,21 +25,21 @@ class QuestionDefaults {
     var storageAnswer = Answer(text: "")
     var dataStorage = QuestionData(question: "", answers: [Answer(text: "")])
     
-    var questions: [QuestionData] {
-        get {
-            if let data = defaults.value(forKey: "questions") as? Data {
-                return try! PropertyListDecoder().decode([QuestionData].self, from: data)
-            } else {
-                return [QuestionData]()
-            }
-        }
-
-        set {
-            if let data = try? PropertyListEncoder().encode(newValue){
-                defaults.set(data, forKey: "questions")
-            }
-        }
-    }
+//    var questions: [QuestionData] {
+//        get {
+//            if let data = defaults.value(forKey: "questions") as? Data {
+//                return try! PropertyListDecoder().decode([QuestionData].self, from: data)
+//            } else {
+//                return [QuestionData]()
+//            }
+//        }
+//
+//        set {
+//            if let data = try? PropertyListEncoder().encode(newValue){
+//                defaults.set(data, forKey: "questions")
+//            }
+//        }
+//    }
     
     static func getQuestion() -> [QuestionData] {
         if let data = UserDefaults.standard.object(forKey: "questions") {
