@@ -11,10 +11,10 @@ import CoreData
 class IntroductionViewController: UIViewController {
     
     var context: NSManagedObjectContext!
-//    var question: [QuestionIlnar] = []
-//
-//    let ilnarQuestion = WhoseQuestion.Ilnar
-//    let astafievQuestion = WhoseQuestion.Astafiev
+    var question: [QuestionIlnar] = []
+
+    let ilnarQuestion = WhoseQuestion.Ilnar
+    let astafievQuestion = WhoseQuestion.Astafiev
     
     override func viewDidLoad() {
         super.viewDidLoad()
